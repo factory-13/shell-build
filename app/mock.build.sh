@@ -11,7 +11,7 @@
 # Build SRPM.
 # -------------------------------------------------------------------------------------------------------------------- #
 
-function ext.mock.build.srpm() {
+ext.mock.build.srpm() {
     config="${1}"
     package="${2}"
 
@@ -26,7 +26,7 @@ function ext.mock.build.srpm() {
 # Build RPM.
 # -------------------------------------------------------------------------------------------------------------------- #
 
-function ext.mock.build.rpm() {
+ext.mock.build.rpm() {
     config="${1}"
     package="${2}"
 
