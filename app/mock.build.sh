@@ -13,12 +13,13 @@
 
 ext.mock.build.srpm() {
     config="${1}"
-    package="${2}"
+    distr="${2}"
+    package="${3}"
 
-    mock -r ${config}               \
-    --spec=specs/${package}.spec    \
-    --sources=sources/${package}    \
-    --resultdir=srpms               \
+    mock -r ${config}                       \
+    --spec=specs/${distr}/${package}.spec   \
+    --sources=sources/${distr}/${package}   \
+    --resultdir=srpms/${distr}              \
     --buildsrpm
 }
 
@@ -28,9 +29,10 @@ ext.mock.build.srpm() {
 
 ext.mock.build.rpm() {
     config="${1}"
-    package="${2}"
+    distr="${2}"
+    package="${3}"
 
-    mock -r ${config}   \
-    --resultdir=rpms    \
-    --rebuild srpms/${package}.src.rpm
+    mock -r ${config}           \
+    --resultdir=rpms/${distr}   \
+    --rebuild srpms/${distr}/${package}.${distr}.src.rpm
 }
