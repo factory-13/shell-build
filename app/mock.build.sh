@@ -7,19 +7,19 @@
 # @version 1.0.0
 # -------------------------------------------------------------------------------------------------------------------- #
 
-ext.mock.get.git(){
+ext.mock.get.git() {
     git="$( which git )"
 
     echo "${git}"
 }
 
-ext.mock.dir.build(){
+ext.mock.dir.build() {
     dir_build="/home/storage/build"
 
     echo "${dir_build}"
 }
 
-ext.mock.dir.factory(){
+ext.mock.dir.factory() {
     dir_build="$( ext.mock.dir.build )"
     dir_factory="${dir_build}/build.factory"
 
@@ -35,9 +35,9 @@ run.mock.build.srpm() {
     distr_name="${2}"
     package="${3}"
 
-    git=$( ext.mock.get.git )
-    dir_build=$( ext.mock.dir.build )
-    dir_factory=$( ext.mock.dir.factory )
+    git="$( ext.mock.get.git )"
+    dir_build="$( ext.mock.dir.build )"
+    dir_factory="$( ext.mock.dir.factory )"
 
     case ${distr_name} in
         centos)
